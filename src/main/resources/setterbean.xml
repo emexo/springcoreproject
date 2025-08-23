@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean name="marks" class="com.springcore.xml.di.setter.Marks">
+        <property name="math" value="85"/>
+        <property name="science" value="90"/>
+        <property name="english" value="88"/>
+    </bean>
+    <bean name="student" class="com.springcore.xml.di.setter.Student">
+        <property name="studentId" value="101"/>
+        <property name="studentName" value="John Doe"/>
+        <property name="marks" ref="marks"/>
+    </bean>
+</beans>
