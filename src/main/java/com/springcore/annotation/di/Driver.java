@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.inject.Inject;
+
 
 /**
  * Autowired
@@ -18,12 +20,11 @@ import org.springframework.stereotype.Component;
 public class Driver {
 
 
-    @Qualifier("toyota")
-    @Autowired(required = false)
-    private Vehicle vehicle;
+    @Inject
+    private Toyota toyota;
 
     public void drive() {
-        vehicle.drive();
+        toyota.drive();
     }
 
 }
