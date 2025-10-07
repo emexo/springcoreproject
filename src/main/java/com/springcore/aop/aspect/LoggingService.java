@@ -21,7 +21,9 @@ public class LoggingService {
 
     }
 
-    @Pointcut("execution(* com.springcore.aop.dao.PassengerDAOImpl.*(..))")
+    //@Pointcut("execution(public Passenger com.springcore.aop.dao.PassengerDAOImpl.*(Integer, ..))")
+    //@Pointcut("within(com.springcore.aop.dao..*)")
+    //@Pointcut("bean(*DAOImpl && get*)")
     public void pointcut(){
 
     }
