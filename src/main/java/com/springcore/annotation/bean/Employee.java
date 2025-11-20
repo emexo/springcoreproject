@@ -1,14 +1,13 @@
 package com.springcore.annotation.bean;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-@Data
-@Component
+@Component(value = "emp")
+@Getter
+@Setter
 public class Employee {
-    private int id;
-    private String name;
-    private String address;
-
-
+    private int empId;
+    private String empName;
 }
