@@ -3,6 +3,7 @@ package com.springcore.javabasedconfig;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.Date;
 
@@ -10,8 +11,7 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.springcore.javabasedconfig");
-
-        Date date = context.getBean("dateBean", Date.class);
-       log.info("Current Date: {}" , date);
+        Date date = (Date) context.getBean("dateBean");
+        log.info(date);
     }
 }
