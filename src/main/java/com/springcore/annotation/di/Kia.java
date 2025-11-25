@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Log4j2
-public class Honda implements Vehicle{
+public class Kia implements Vehicle{
     @Override
     public void drive() {
-        log.info("Driving Honda Car");
+        log.info("Driving Kia Car");
     }
 }

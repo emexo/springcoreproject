@@ -1,37 +1,48 @@
 package com.springcore.annotation.di;
 
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
 
 /**
- * Autowired
- *  Match by type - inject the bean by type
- *  Match by Name - inject the bean by name
- *  Match by Qualifier - inject the bean by qualifier
+ * @Autowired
+ * Match ByType - Based on type of bean it will inject the dependency
+ * Match ByQualifier - Based on name of bean it will inject the dependency
+ * Mach ByName - Based on variable name it will inject the dependency
  *
- *  Inject
- *   Match by type - inject the bean by type
- *   Match by Name - inject the bean by name
- *   Match by Qualifier - inject the bean by qualifier
+ * @Inject
+ * It is part of Java standard (JSR-330)
+ * It works same as @Autowired but does not have 'required' attribute
+ * Match by Type
+ * Match by Qualifier
+ * Match by Name
  *
- *   Resource
- *    match by Name - inject the bean by name
- *    match by type - inject the bean by type
- *    match by Qualifier - inject the bean by qualifier
+ * @Resource
+ * It is part of Java standard (JSR-250)
+ * It works based on name of the bean
+ * Match by Name
+ * Match by Type
+ * Match by Qualifier
  */
-
 @Component
 public class User {
 
+    @Inject
+    private Vehicle honda;
 
-    @Resource
-    private Honda honda;
+    /*
+    public User(Vehicle honda) {
+        this.honda = honda;
+    }
+*/
+/*    @Autowired
+    public void setHonda(Vehicle honda) {
+        this.honda = honda;
+    }*/
 
-
-    public void drive() {
+    public void driveVehicle() {
         honda.drive();
     }
 }
