@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean name="customerBean" class="com.springcoreproject.xml.di.setter.Customer">
+           <property name="customerId" value="C001"/>
+           <property name="customerName" value="John Doe"/>
+    </bean>
+    
+    <bean name="account" class="com.springcoreproject.xml.di.setter.Account">
+        <property name="accountId" value="123"/>
+        <property name="accountType" value="Savings"/>
+        <property name="customer" ref="customerBean"/>
+    </bean>
+
+</beans>
