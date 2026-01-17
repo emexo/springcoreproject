@@ -1,5 +1,6 @@
 package com.springcoreproject.annotation.di;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
