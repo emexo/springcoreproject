@@ -2,7 +2,9 @@ package com.springcoreproject.aop;
 
 import lombok.extern.log4j.Log4j2;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -42,5 +44,18 @@ public class LoggingAspect {
     public void afterThrowingAdvice(JoinPoint joinPoint, Throwable error){
         String methodName = joinPoint.getSignature().getName();
         log.error("Method:{} threw exception: {}" , methodName, error);
+    }
+
+    @Around("pointcutExample()")
+    public void aroundAdvice(ProceedingJoinPoint joinPoint){
+        String methodName = joinPoint.getSignature().getName();
+        log.info("Around advice: Before executing method: {}", methodName);
+        // Proceed with method execution
+        try {
+            joinPoint.proceed();
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+        log.info("Around advice: After executing method: {}", methodName);
     }
 }
