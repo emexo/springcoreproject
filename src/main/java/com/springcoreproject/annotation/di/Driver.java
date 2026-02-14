@@ -27,12 +27,10 @@ import javax.inject.Inject;
 
 @Component
 public class Driver {
-
     @Resource
-    private Vehicle vehicle;
-
+    private HondaCar skodaCar ;
 
     public void startJourney() {
-        vehicle.drive();
+        skodaCar.drive();
     }
 }
