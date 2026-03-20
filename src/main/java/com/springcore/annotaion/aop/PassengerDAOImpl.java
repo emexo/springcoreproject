@@ -13,14 +13,11 @@ public class PassengerDAOImpl implements PassengerDAO{
 
     @Override
     public Passenger getPassenger(int id) {
-        log.info("#### getPassenger() method called with id: {} ####", id);
         if (null != passengerMap.get(id)){
-            return passengerMap.get(id);
-        }
+            return passengerMap.get(id);        }
 
         Passenger passenger = new Passenger(id);
         passengerMap.put(id, passenger);
-        log.info("#### Passenger created and added to map: {} ####", passenger);
         return passenger;
     }
 
