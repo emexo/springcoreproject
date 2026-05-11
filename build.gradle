@@ -22,8 +22,8 @@ dependencies {
     implementation "org.springframework:spring-context-support:${springVersion}"
     implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
     implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
-    compileOnly 'org.projectlombok:lombok:1.18.32'
-    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    compileOnly 'org.projectlombok:lombok:1.18.46'
+    annotationProcessor 'org.projectlombok:lombok:1.18.46'
     implementation 'javax.inject:javax.inject:1'
     implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
     implementation 'org.postgresql:postgresql:42.7.7'
