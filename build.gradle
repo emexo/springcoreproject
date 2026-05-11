@@ -11,7 +11,7 @@ repositories {
 }
 
 ext {
-    springVersion = '7.0.6'
+    springVersion = '7.0.7'
 }
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
