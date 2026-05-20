@@ -5,9 +5,14 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Log4j2
-@Scope("singleton")
+@Scope("prototype")
 @Component
 public class Employee {
+
+    public Employee(){
+        log.info("###### Default constructor#######");
+    }
+
     public void getEmployeeDetails(){
         log.info("Employee details");
     }
