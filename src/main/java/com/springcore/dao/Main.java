@@ -12,7 +12,7 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.springcore.dao");
         UserDAOImpl userDAO = context.getBean("userDAOImpl", UserDAOImpl.class);
 
-     /*   User user = new User();
+     /* User user = new User();
         user.setUsername("Gary");
         user.setPassword("gary@123");
         user.setFullName("Gary Gadel");
@@ -21,7 +21,7 @@ public class Main {
         int response = userDAO.saveUser(user);
         log.info("Response:{}", response);*/
 
-        List<User> users = userDAO.getAll();
-        users.forEach(data -> log.info(data));
+       User user = userDAO.getUserByName("Gary");
+       log.info("User:{}", user);
     }
 }
