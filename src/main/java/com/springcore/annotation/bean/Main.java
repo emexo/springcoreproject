@@ -1,4 +1,4 @@
-package com.springcore.annotaion.di;
+package com.springcore.annotation.bean;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.springcore");
-        Driver driver = context.getBean("driver", Driver.class);
-        driver.drive();
+        Product product = context.getBean("product", Product.class);
+        product.getProductDetails();
     }
 }
