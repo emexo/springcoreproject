@@ -8,7 +8,8 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.springcore.dao");
         StationDAO stationDAO = context.getBean("stationDAO", StationDAO.class);
 
-        Station station = new Station("KR Puram", "KR00L", "Bangalore");
-        stationDAO.save(station);
+       // Station station = new Station("KR Puram", "KR00L", "Bangalore");
+        //stationDAO.save(station);
+        stationDAO.findById(1);
     }
 }

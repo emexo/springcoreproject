@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.springcore.di1");
-        Driver driver = context.getBean(Driver.class);
+        Driver driver = context.getBean("driver", Driver.class);
         driver.drive();
     }
 }

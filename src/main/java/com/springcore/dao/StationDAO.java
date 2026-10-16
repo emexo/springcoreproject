@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Log4j2
 @Repository
 public class StationDAO {
@@ -17,5 +19,15 @@ public class StationDAO {
         String sql = "INSERT INTO station(station_name, station_code, location) VALUES (?, ?, ?)";
         int result = jdbcTemplate.update(sql, station.stationName(), station.stationCode(), station.location());
         log.info("Station saved successfully: {}", result);
+    }
+
+    public List<Station> findAll(){
+        String sql = "select * from station";
+        return jdbcTemplate.query(sql, new StationRowMapper());
+    }
+
+    public Station findById(int stationId){
+        String sql = "select * from station where station_id=?";
+        return jdbcTemplate.queryForObject(sql, new StationRowMapper(), stationId);
     }
 }

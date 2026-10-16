@@ -5,7 +5,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("connection")
 public class DBConnection {
     @PostConstruct
     public void connect() {

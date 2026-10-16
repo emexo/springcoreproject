@@ -6,7 +6,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.springcore");
-        Product product = context.getBean("product", Product.class);
-        product.getProductDetails();
+
+        Employee employee = context.getBean("emp", Employee.class);
+        employee.getEmployeeDetails();
     }
 }
