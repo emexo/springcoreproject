@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-@PropertySource("classpath:db.properties")  // Load properties from db.properties file
+@PropertySource("db.properties")  // Load properties from db.properties file
 @Component
 public class DbConnection {
     @Value("${db.url}")  // Inject the value of db.url from the properties file

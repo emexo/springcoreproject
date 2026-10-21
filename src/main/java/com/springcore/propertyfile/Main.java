@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.springcore.propertyfile");
-        DbConnection dbConnection = context.getBean(DbConnection.class);
+        DbConnection dbConnection = context.getBean("dbConnection", DbConnection.class);
         dbConnection.connect();
     }
 }
