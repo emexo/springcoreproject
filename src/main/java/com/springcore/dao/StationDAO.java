@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class StationDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Transactional
     public void save(Station station) {
         log.info("Inside the StationDAO save method, station:{}", station);
         String sql = "INSERT INTO station(station_name, station_code, location) VALUES (?, ?, ?)";
@@ -21,6 +23,7 @@ public class StationDAO {
         log.info("Station saved successfully: {}", result);
     }
 
+    @Transactional(readOnly = true)
     public List<Station> findAll(){
         String sql = "select * from station";
         return jdbcTemplate.query(sql, new StationRowMapper());
