@@ -8,8 +8,9 @@ import java.util.Date;
 @Configuration
 public class ApplicationConfig {
 
-    @Bean("currentDate")
-    public Date getCurrentDate() {
-        return new Date();
+    @Bean("date")
+    public Date getDate(){
+        Date date = new Date();
+        return date;
     }
 }

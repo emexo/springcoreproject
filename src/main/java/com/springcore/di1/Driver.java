@@ -5,20 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
+
 
 
 @Component
 public class Driver {
 
-    @Resource
-    private Honda honda;
 
-    public Driver(Honda honda) {
-        this.honda = honda;
-    }
+    @Autowired
+    private Toyota honda;
 
-    public void drive() {
+    public void print(){
         honda.engine();
     }
 }
