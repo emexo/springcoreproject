@@ -16,10 +16,14 @@ public class DbConnection {
     @Value("${db.password}")  // Inject the value of db.password from the properties file
     private String dbPassword;
 
+    @Value("${db.port:8080}")
+    private int port;
+
     public void connect() {
         System.out.println("Connecting to database...");
         System.out.println("URL: " + dbUrl);
         System.out.println("Username: " + dbUsername);
         System.out.println("Password: " + dbPassword);
+        System.out.printf("Port "+ port);
     }
 }
